@@ -43,7 +43,7 @@ export type Project = {
 };
 
 /** Tahun mulai ngoding, dipakai untuk menghitung "years" otomatis. Ubah kalau kamu mulai lebih awal. */
-const START_YEAR = 2025;
+const START_YEAR = 2021;
 const BIRTH_DATE = new Date("2009-08-21");
 
 function ageFrom(birth: Date, now = new Date()): number {
@@ -73,7 +73,7 @@ export const site = {
   email,
   socials: [
     { label: "Instagram", href: "https://www.instagram.com/wtf.w4n_/", icon: "instagram" },
-    { label: "GitHub", href: "https://github.com/Ikhwan-stars", icon: "github" },
+    { label: "GitHub", href: "https://github.com/", icon: "github" },
     { label: "WhatsApp", href: "https://wa.me/6283138010670", icon: "whatsapp" },
   ] satisfies Social[],
   highlights: [
@@ -216,7 +216,7 @@ export const site = {
       category: "api",
       thumb: "api",
       live: "https://kyoto-rest-api.vercel.app/",
-      repo: "https://github.com/Ikhwan-stars/kyoto-rest-api",
+      repo: "https://github.com/",
     },
     {
       slug: "repohub",
@@ -229,7 +229,7 @@ export const site = {
       category: "web",
       thumb: "panel",
       live: "https://repo-hub-psi.vercel.app/",
-      repo: "https://github.com/Ikhwan-stars/RepoHub",
+      repo: "https://github.com/",
     },
   ] satisfies Project[],
 };
