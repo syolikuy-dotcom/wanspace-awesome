@@ -72,19 +72,23 @@ export function CommandPalette() {
             .catch(() => toast(`Email: ${site.email}`, "info"));
         },
       },
-      {
+    ];
+
+    const cv = site.cv;
+    if (cv) {
+      list.push({
         id: "cv",
         label: "Download CV",
         group: "Actions",
         icon: Download,
         run: () => {
           const a = document.createElement("a");
-          a.href = site.cv;
+          a.href = cv;
           a.download = "";
           a.click();
         },
-      },
-    ];
+      });
+    }
 
     site.socials.forEach((s) =>
       list.push({ id: `social-${s.icon}`, label: s.label, group: "Links", icon: ExternalLink, run: link(s.href) }),
