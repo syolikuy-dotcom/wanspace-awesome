@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { Menu, Search, X } from "lucide-react";
-import { navLinks } from "@/data/site";
+import { navLinks, site } from "@/data/site";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { emit, OPEN_PALETTE } from "@/lib/events";
 import { scrollToId } from "@/lib/lenis";
@@ -43,7 +43,7 @@ export function Navbar() {
         }`}
       >
         <a href="#home" onClick={(e) => go(e, "home")} className="text-base font-bold tracking-tight">
-          PORTFOLIO.
+          {site.nickname.toUpperCase()}.
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
