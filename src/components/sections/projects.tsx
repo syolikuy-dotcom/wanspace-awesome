@@ -12,12 +12,15 @@ import { Spotlight } from "@/components/spotlight";
 
 type Filter = "all" | Project["category"];
 
-const filters: { id: Filter; label: string }[] = [
+const allFilters: { id: Filter; label: string }[] = [
   { id: "all", label: "All" },
   { id: "web", label: "Web" },
   { id: "api", label: "API" },
   { id: "bot", label: "Bots" },
 ];
+
+// tab filter hanya muncul kalau kategorinya punya project
+const filters = allFilters.filter((f) => f.id === "all" || site.projects.some((p) => p.category === f.id));
 
 function Thumb({ project }: { project: Project }) {
   return (
@@ -235,7 +238,7 @@ export function Projects() {
         </div>
       </LayoutGroup>
 
-      <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         <AnimatePresence mode="popLayout" initial={false}>
           {visible.map((p) => (
             <motion.li
