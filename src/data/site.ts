@@ -215,7 +215,6 @@ export const site = {
       stack: ["Node.js", "REST API", "Vercel"],
       category: "api",
       thumb: "api",
-      image: "/projects/kyoto-api.jpg",
       live: "https://kyoto-rest-api.vercel.app/",
       repo: "https://github.com/Ikhwan-stars/kyoto-rest-api",
     },
@@ -229,31 +228,8 @@ export const site = {
       stack: ["JavaScript", "GitHub API", "Dashboard"],
       category: "web",
       thumb: "panel",
-      image: "/projects/repohub.jpg",
       live: "https://repo-hub-psi.vercel.app/",
       repo: "https://github.com/Ikhwan-stars/RepoHub",
-    },
-    {
-      slug: "elyra-bot",
-      title: "ELYRA WhatsApp Bot",
-      summary:
-        "Bot WhatsApp modular berbasis Zapo-JS dengan sistem plugin: AI, downloader, sticker dan maker, musik, manajemen grup, hingga pesan interaktif.",
-      details:
-        "Saya mengkustomisasi dan menstabilkan basis ELYRA (ERINE-AI) dari Lynx Decode dan tim: memperbaiki crash null-safety di sekitar 35 titik, merapikan konflik command, menambah scraper pengganti untuk GitHub dan MediaFire downloader, serta menulis smoke test.",
-      stack: ["Node.js", "Zapo-JS", "SQLite", "Canvas"],
-      category: "bot",
-      thumb: "bot",
-    },
-    {
-      slug: "snowychat",
-      title: "SnowyChat",
-      summary:
-        "Klien web untuk mengontrol bot Minecraft dari browser: multi-akun, chat, inventori, dan automasi, semuanya real-time lewat Socket.IO.",
-      details:
-        "Backend Node.js dan Express dengan Mineflayer untuk koneksi ke server game, Socket.IO untuk komunikasi real-time, penyimpanan lokal sql.js, security headers, rate limit HTTP, dan logger terstruktur.",
-      stack: ["Node.js", "Express.js", "Socket.IO", "Mineflayer"],
-      category: "bot",
-      thumb: "bot",
     },
   ] satisfies Project[],
 };
