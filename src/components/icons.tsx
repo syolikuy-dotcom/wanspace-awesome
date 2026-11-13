@@ -27,16 +27,15 @@ export const GithubIcon = (p: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export const LinkedinIcon = (p: SVGProps<SVGSVGElement>) => (
+export const WhatsappIcon = (p: SVGProps<SVGSVGElement>) => (
   <svg {...base} {...p}>
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect width="4" height="12" x="2" y="9" />
-    <circle cx="4" cy="4" r="2" />
+    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+    <path d="M9.2 8.6c.3 2.6 2.7 5 5.2 5.2l1.1-1.3a.6.6 0 0 0-.1-.8l-1.5-1a.6.6 0 0 0-.8.1l-.4.5c-.9-.4-1.6-1.1-2-2l.5-.4a.6.6 0 0 0 .1-.8l-1-1.5a.6.6 0 0 0-.8-.1z" />
   </svg>
 );
 
 export const socialIcons = {
   instagram: InstagramIcon,
   github: GithubIcon,
-  linkedin: LinkedinIcon,
+  whatsapp: WhatsappIcon,
 } as const;
