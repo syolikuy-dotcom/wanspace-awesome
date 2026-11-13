@@ -1,4 +1,6 @@
-# RyHar Portfolio
+# Ikhwan Romadon — Portfolio
+
+Portofolio Ikhwan Romadon (SMAN 7 Kabupaten Tangerang). Semua konten (profil, pengalaman, skill, project, kontak) ada di `src/data/site.ts`.
 
 Website portofolio full-stack: **Next.js 14 (App Router) · TypeScript · Tailwind CSS · Framer Motion · Lenis (smooth scroll)**.
 
@@ -35,8 +37,9 @@ src/
 ├── data/site.ts               # ← SEMUA konten ada di sini (edit di sini saja)
 ├── hooks/ · lib/              # scroll-spy, lenis, rate-limit, knowledge base chatbot
 public/
-├── avatar.svg                 # ganti dengan fotomu (avatar.jpg) lalu ubah path di data/site.ts
-└── cv.pdf                     # taruh CV kamu di sini (tombol Download CV)
+├── avatar.jpg                 # foto profil (dipakai di Hero & About)
+├── projects/                  # screenshot project (Kyoto API, RepoHub)
+└── cv.pdf                     # (opsional) taruh CV lalu isi `cv: "/cv.pdf"` di data/site.ts
 ```
 
 ## Menjalankan lokal
