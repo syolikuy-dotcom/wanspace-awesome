@@ -55,7 +55,7 @@ export function Footer() {
                     aria-label={s.label}
                     className="grid size-9 place-items-center rounded-full border border-line transition-colors hover:border-foreground/40 hover:text-foreground"
                   >
-                    <Icon size={15} />
+                    <Icon width={15} height={15} />
                   </a>
                 </li>
               );
