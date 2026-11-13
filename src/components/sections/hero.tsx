@@ -63,16 +63,18 @@ export function Hero() {
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </ScrollLink>
             </Magnetic>
-            <Magnetic>
-              <a
-                href={site.cv}
-                download
-                className="inline-flex items-center gap-2 rounded-xl border border-line bg-card px-6 py-3.5 text-sm font-medium transition-colors hover:border-foreground/40"
-              >
-                Download CV
-                <Download size={16} />
-              </a>
-            </Magnetic>
+            {site.cv && (
+              <Magnetic>
+                <a
+                  href={site.cv}
+                  download
+                  className="inline-flex items-center gap-2 rounded-xl border border-line bg-card px-6 py-3.5 text-sm font-medium transition-colors hover:border-foreground/40"
+                >
+                  Download CV
+                  <Download size={16} />
+                </a>
+              </Magnetic>
+            )}
           </motion.div>
 
           <motion.div {...rise(4)} className="mt-12">
