@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Atom, Database, Hexagon, Leaf, Wind } from "lucide-react";
+import { Atom, Bot, Database, GitBranch, Hexagon, Radio, Webhook, Wind, Zap } from "lucide-react";
 import { site } from "@/data/site";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
@@ -23,7 +23,11 @@ const glyphs: Record<string, ReactNode> = {
   node: <Hexagon size={26} strokeWidth={1.75} />,
   express: <TextGlyph>Ex</TextGlyph>,
   mysql: <Database size={26} strokeWidth={1.75} />,
-  mongodb: <Leaf size={26} strokeWidth={1.75} />,
+  supabase: <Zap size={26} strokeWidth={1.75} />,
+  bot: <Bot size={26} strokeWidth={1.75} />,
+  realtime: <Radio size={26} strokeWidth={1.75} />,
+  api: <Webhook size={26} strokeWidth={1.75} />,
+  git: <GitBranch size={26} strokeWidth={1.75} />,
 };
 
 export function Skills() {
