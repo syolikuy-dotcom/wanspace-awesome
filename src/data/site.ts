@@ -54,7 +54,7 @@ function ageFrom(birth: Date, now = new Date()): number {
   return age;
 }
 
-const email = "ikhwan.romadon63@sma.belajar.id";
+const email = "ikhwanajeh@gmail.com";
 
 export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? vercelUrl ?? "http://localhost:3000",
@@ -66,10 +66,10 @@ export const site = {
     "Portofolio Ikhwan Romadon — pelajar SMAN 7 Kabupaten Tangerang dan Fullstack Web Developer yang membangun aplikasi web, REST API, dan bot dengan Next.js, Node.js, dan MySQL.",
   roles: ["Fullstack Web Developer", "Next.js & Node.js Builder", "WhatsApp Bot Developer"],
   intro:
-    "Halo! Saya pelajar SMAN 7 Kabupaten Tangerang yang suka membangun aplikasi web, REST API, dan bot dari nol. Saya belajar lewat proyek nyata, mulai dari toko digital sampai dashboard dan bot WhatsApp.",
+    "Halo! Saya suka ngoding dan bereksperimen dengan ide-ide baru. Bagi saya, setiap baris kode adalah cara untuk menghadirkan sesuatu yang bermanfaat dan keren di dunia digital.",
   avatar: "/avatar.jpg",
-  /** Taruh CV di /public/cv.pdf lalu isi "/cv.pdf" di sini. Kosong = tombol Download CV disembunyikan. */
-  cv: undefined as string | undefined,
+  /** Upload CV kamu ke /public/cv.pdf (nama file harus sama) dan tombol Download CV langsung berfungsi. */
+  cv: "/cv.pdf",
   email,
   socials: [
     { label: "Instagram", href: "https://www.instagram.com/wtf.w4n_/", icon: "instagram" },
@@ -92,21 +92,21 @@ export const site = {
     },
     {
       title: "REST API & Backend",
-      description: "API yang rapi dengan autentikasi, database, rate limiting, dan struktur endpoint yang mudah dipakai.",
+      description: "API yang rapi dengan autentikasi, database, rate limiting, dan struktur endpoint yang jelas serta mudah digunakan.",
       icon: "server",
       points: ["Node.js & Express", "MySQL & Supabase", "Auth & keamanan"],
     },
     {
       title: "WhatsApp & Game Bots",
-      description: "Bot dengan sistem plugin, integrasi API, dan kontrol real-time lewat browser untuk otomatisasi layanan.",
+      description: "Bot dengan sistem plugin, integrasi API, dan kontrol real-time melalui browser untuk mengotomatisasi layanan.",
       icon: "bot",
       points: ["WhatsApp bot", "Socket.IO realtime", "Integrasi API"],
     },
   ] satisfies Service[],
   about: {
-    who: "Saya Ikhwan Romadon, pelajar SMAN 7 Kabupaten Tangerang yang sedang membangun jalan menjadi Web Developer. Saya belajar mandiri dan fokus membuat aplikasi web, REST API, serta bot yang benar-benar dipakai.",
+    who: "Saya seorang web developer yang berfokus pada menciptakan tampilan dan pengalaman pengguna yang sederhana, cepat, dan fungsional.",
     approach:
-      "Saya mengutamakan kode yang rapi, tampilan responsif, dan keamanan dasar seperti validasi input, rate limiting, dan autentikasi yang benar di setiap proyek, sambil terus belajar lewat membangun hal nyata.",
+      "Saya mengutamakan clean code, desain responsif, dan pengalaman pengguna yang intuitif di setiap proyek yang saya kerjakan.",
     details: [
       { label: "Name", value: "Ikhwan Romadon" },
       { label: "Place of Birth", value: "Tangerang, 21 Agustus 2009" },
@@ -153,7 +153,7 @@ export const site = {
   skills: [
     {
       title: "Frontend Languages & Frameworks",
-      description: "Tools yang saya pakai untuk membangun antarmuka yang rapi, responsif, dan interaktif.",
+      description: "Tools yang saya gunakan untuk membangun antarmuka yang rapi, responsif, dan interaktif.",
       items: [
         { name: "React", glyph: "react" },
         { name: "Next.js", glyph: "next" },
