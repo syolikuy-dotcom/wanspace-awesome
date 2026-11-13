@@ -11,10 +11,10 @@ export function About() {
   const techCount = new Set(site.skills.flatMap((g) => g.items.map((i) => i.name))).size;
 
   const stats = [
-    { value: site.stats.years, suffix: "+", decimals: 0, label: "Years of experience" },
+    { value: site.stats.years, suffix: "+", decimals: 0, label: "Years of coding" },
     { value: site.projects.length, suffix: "", decimals: 0, label: "Featured projects" },
     { value: techCount, suffix: "", decimals: 0, label: "Core technologies" },
-    { value: site.stats.gpa, suffix: "", decimals: 2, label: "GPA" },
+    { value: site.stats.age, suffix: "", decimals: 0, label: "Years old" },
   ];
 
   return (
