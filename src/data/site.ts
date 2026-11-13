@@ -8,7 +8,7 @@ const vercelUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
   ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   : undefined;
 
-export type Social = { label: string; href: string; icon: "instagram" | "github" | "linkedin" };
+export type Social = { label: string; href: string; icon: "instagram" | "github" | "whatsapp" };
 export type Highlight = { label: string; icon: "clock" | "code" | "monitor" };
 export type Job = {
   period: string;
@@ -42,95 +42,118 @@ export type Project = {
   repo?: string;
 };
 
+/** Tahun mulai ngoding, dipakai untuk menghitung "years" otomatis. Ubah kalau kamu mulai lebih awal. */
+const START_YEAR = 2025;
+const BIRTH_DATE = new Date("2009-08-21");
+
+function ageFrom(birth: Date, now = new Date()): number {
+  let age = now.getFullYear() - birth.getFullYear();
+  const beforeBirthday =
+    now.getMonth() < birth.getMonth() || (now.getMonth() === birth.getMonth() && now.getDate() < birth.getDate());
+  if (beforeBirthday) age -= 1;
+  return age;
+}
+
+const email = "ikhwan.romadon63@sma.belajar.id";
+
 export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? vercelUrl ?? "http://localhost:3000",
-  name: "Ahmad Rizki Hartawan",
-  nickname: "RyHar",
-  firstName: "Rizki",
+  name: "Ikhwan Romadon",
+  nickname: "Ikhwan",
+  firstName: "Ikhwan",
   tagline: "Fullstack Web Developer",
   description:
-    "Portofolio Ahmad Rizki Hartawan (RyHar) — Fullstack Web Developer yang fokus pada tampilan sederhana, cepat, dan fungsional.",
-  roles: ["Fullstack Web Developer", "Next.js Enthusiast", "WhatsApp Bot Builder"],
+    "Portofolio Ikhwan Romadon — pelajar SMAN 7 Kabupaten Tangerang dan Fullstack Web Developer yang membangun aplikasi web, REST API, dan bot dengan Next.js, Node.js, dan MySQL.",
+  roles: ["Fullstack Web Developer", "Next.js & Node.js Builder", "WhatsApp Bot Developer"],
   intro:
-    "Halo! Saya suka ngoding dan bereksperimen dengan ide-ide baru. Bagi saya, setiap baris kode adalah cara untuk menghadirkan sesuatu yang bermanfaat dan keren di dunia digital.",
-  avatar: "/avatar.svg",
-  cv: "/cv.pdf",
-  email: "ryharofficial@gmail.com",
+    "Halo! Saya pelajar SMAN 7 Kabupaten Tangerang yang suka membangun aplikasi web, REST API, dan bot dari nol. Saya belajar lewat proyek nyata, mulai dari toko digital sampai dashboard dan bot WhatsApp.",
+  avatar: "/avatar.jpg",
+  /** Taruh CV di /public/cv.pdf lalu isi "/cv.pdf" di sini. Kosong = tombol Download CV disembunyikan. */
+  cv: undefined as string | undefined,
+  email,
   socials: [
-    { label: "Instagram", href: "https://instagram.com/", icon: "instagram" },
-    { label: "GitHub", href: "https://github.com/", icon: "github" },
-    { label: "LinkedIn", href: "https://linkedin.com/", icon: "linkedin" },
+    { label: "Instagram", href: "https://www.instagram.com/wtf.w4n_/", icon: "instagram" },
+    { label: "GitHub", href: "https://github.com/Ikhwan-stars", icon: "github" },
+    { label: "WhatsApp", href: "https://wa.me/6283138010670", icon: "whatsapp" },
   ] satisfies Social[],
   highlights: [
-    { label: "2+ Years of Experience", icon: "clock" },
-    { label: "Javascript Main Language", icon: "code" },
-    { label: "Fullstack developer", icon: "monitor" },
+    { label: `Coding since ${START_YEAR}`, icon: "clock" },
+    { label: "JavaScript Main Language", icon: "code" },
+    { label: "Fullstack Developer", icon: "monitor" },
   ] satisfies Highlight[],
-  stats: { years: 2, gpa: 3.84 },
+  stats: { years: Math.max(1, new Date().getFullYear() - START_YEAR), age: ageFrom(BIRTH_DATE) },
   chatSuggestions: ["Kamu siapa?", "Apa saja skill-nya?", "Ada proyek apa saja?", "Bagaimana cara menghubungi?"],
   services: [
     {
       title: "Web Applications",
-      description: "Dashboard, platform, dan website full-stack yang cepat, responsif, dan mudah dirawat.",
+      description: "Toko digital, dashboard admin/user, dan website full-stack yang cepat, responsif, dan mudah dirawat.",
       icon: "layout",
-      points: ["Next.js & React", "Dashboard admin / user", "Payment gateway"],
+      points: ["Next.js & React", "Dashboard admin / user", "Pembayaran QRIS"],
     },
     {
       title: "REST API & Backend",
-      description: "API yang rapi dengan database, manajemen akses, dan dokumentasi yang jelas.",
+      description: "API yang rapi dengan autentikasi, database, rate limiting, dan struktur endpoint yang mudah dipakai.",
       icon: "server",
-      points: ["Express.js", "MySQL & MongoDB", "Dokumentasi API"],
+      points: ["Node.js & Express", "MySQL & Supabase", "Auth & keamanan"],
     },
     {
-      title: "WhatsApp Bots",
-      description: "Bot multifungsi dengan command dinamis, integrasi API, dan otomatisasi layanan.",
+      title: "WhatsApp & Game Bots",
+      description: "Bot dengan sistem plugin, integrasi API, dan kontrol real-time lewat browser untuk otomatisasi layanan.",
       icon: "bot",
-      points: ["Baileys", "Puppeteer & Canvas", "Integrasi API"],
+      points: ["WhatsApp bot", "Socket.IO realtime", "Integrasi API"],
     },
   ] satisfies Service[],
   about: {
-    who: "Saya seorang web developer yang berfokus pada menciptakan tampilan dan pengalaman pengguna yang sederhana, cepat, dan fungsional.",
+    who: "Saya Ikhwan Romadon, pelajar SMAN 7 Kabupaten Tangerang yang sedang membangun jalan menjadi Web Developer. Saya belajar mandiri dan fokus membuat aplikasi web, REST API, serta bot yang benar-benar dipakai.",
     approach:
-      "Saya mengutamakan clean code, desain responsif, dan pengalaman pengguna yang intuitif di setiap proyek yang saya kerjakan.",
+      "Saya mengutamakan kode yang rapi, tampilan responsif, dan keamanan dasar seperti validasi input, rate limiting, dan autentikasi yang benar di setiap proyek, sambil terus belajar lewat membangun hal nyata.",
     details: [
-      { label: "Name", value: "Ahmad Rizki Hartawan" },
-      { label: "Place of Birth", value: "Palembang, Indonesia" },
-      { label: "Phone", value: "+62 895-0818-8642" },
-      { label: "GPA", value: "3.84" },
-      { label: "Email", value: "ryharofficial@gmail.com" },
-      { label: "Education", value: "Universitas Multi Data Palembang" },
+      { label: "Name", value: "Ikhwan Romadon" },
+      { label: "Place of Birth", value: "Tangerang, 21 Agustus 2009" },
+      { label: "Location", value: "Kabupaten Tangerang, Banten, Indonesia" },
+      { label: "Education", value: "SMAN 7 Kabupaten Tangerang" },
+      { label: "Email", value: email },
+      { label: "Focus", value: "Fullstack Web, REST API & Bots" },
     ],
   },
   experience: [
     {
-      period: "2025",
+      period: "2026",
       title: "Fullstack Web Developer",
-      company: "Ryhar Panel",
+      company: "Nivo Premium",
       description:
-        "Developed a web platform for selling hosting panels with dedicated admin and user dashboards. Implemented analytics for monitoring sales and system usage, built system settings management, and integrated a payment gateway for automated transactions.",
-      tags: ["Next.js", "Node.js", "Prisma"],
+        "Membangun toko produk digital full-stack dengan katalog, deposit saldo QRIS, checkout, riwayat pesanan, dan panel admin. Menerapkan keamanan berlapis (hash Argon2, login Google, 2FA TOTP, Cloudflare Turnstile), audit log, rate limiting, dan worker latar belakang.",
+      tags: ["Next.js", "TypeScript", "MySQL", "Tailwind CSS"],
     },
     {
-      period: "2025",
+      period: "2026",
       title: "Fullstack Web Developer",
-      company: "Ryhar API",
+      company: "SnowyStore",
       description:
-        "Developed Ryhar API, a platform that provides developers with easy access to free APIs accompanied by comprehensive documentation. Built a responsive frontend interface and implemented a backend system to handle API requests, user access, and data management.",
-      tags: ["Next.js", "Tailwind CSS", "Express.js", "MySQL", "REST API"],
+        "Membangun toko server panel Pterodactyl, aplikasi premium, dan nomor virtual (OTP) dengan pembayaran QRIS otomatis. Mengerjakan dashboard member dan admin, klaim garansi, status sistem real-time, worker rekonsiliasi pembayaran, serta cadangan terenkripsi.",
+      tags: ["Next.js", "Express.js", "MySQL", "Payment Gateway"],
     },
     {
-      period: "2024 - 2025",
+      period: "2025 - 2026",
       title: "Bot Developer",
-      company: "WhatsApp Bot Platform",
+      company: "WhatsApp & Minecraft Bots",
       description:
-        "Built a multifunctional WhatsApp bot with various features including games, utility tools, and automated services. Implemented message processing, API integrations, and dynamic command handling to create interactive chat-based experiences.",
-      tags: ["Node.js", "Baileys", "Puppeteer", "Express.js", "Canvas", "API Integration"],
+        "Mengkustomisasi dan menstabilkan bot WhatsApp ELYRA berbasis plugin, dan membangun SnowyChat, klien web untuk mengontrol bot Minecraft secara real-time lewat Socket.IO dan Mineflayer.",
+      tags: ["Node.js", "Zapo-JS", "Socket.IO", "Mineflayer", "SQLite"],
+    },
+    {
+      period: "2025",
+      title: "Backend & Web Developer",
+      company: "Personal Projects",
+      description:
+        "Membangun Kyoto API (30+ endpoint di 6 kategori), RepoHub (dashboard pengelola repository GitHub dari browser), dan Archie (ruang arsip pribadi) sebagai bahan belajar sekaligus portofolio.",
+      tags: ["Node.js", "REST API", "GitHub API", "Astro", "Supabase"],
     },
   ] satisfies Job[],
   skills: [
     {
       title: "Frontend Languages & Frameworks",
-      description: "The tools I use to build beautiful, responsive, and interactive user interfaces.",
+      description: "Tools yang saya pakai untuk membangun antarmuka yang rapi, responsif, dan interaktif.",
       items: [
         { name: "React", glyph: "react" },
         { name: "Next.js", glyph: "next" },
@@ -140,46 +163,95 @@ export const site = {
     },
     {
       title: "Backend Core",
-      description: "The foundations of the APIs and services I build for web apps and bots.",
+      description: "Fondasi API dan layanan yang saya bangun untuk aplikasi web dan bot.",
       items: [
         { name: "Node.js", glyph: "node" },
         { name: "Express.js", glyph: "express" },
         { name: "MySQL", glyph: "mysql" },
-        { name: "MongoDB", glyph: "mongodb" },
+        { name: "Supabase", glyph: "supabase" },
+      ],
+    },
+    {
+      title: "Bots, Realtime & Tools",
+      description: "Otomatisasi, komunikasi real-time, dan alat kerja sehari-hari.",
+      items: [
+        { name: "WhatsApp Bot", glyph: "bot" },
+        { name: "Socket.IO", glyph: "realtime" },
+        { name: "REST API", glyph: "api" },
+        { name: "Git & GitHub", glyph: "git" },
       ],
     },
   ] satisfies SkillGroup[],
   projects: [
     {
-      slug: "ryhar-panel",
-      title: "Ryhar Panel",
+      slug: "nivo-premium",
+      title: "Nivo Premium",
       summary:
-        "Platform web untuk menjual panel hosting dengan sistem dashboard terpisah untuk admin dan user serta integrasi payment gateway.",
+        "Toko produk digital full-stack dengan katalog, deposit saldo QRIS, checkout otomatis, riwayat pesanan, dan panel admin lengkap.",
       details:
-        "Dashboard admin untuk memantau penjualan, penggunaan sistem, dan pengaturan layanan. Dashboard user untuk membeli dan mengelola panel. Pembayaran otomatis lewat payment gateway.",
-      stack: ["Next.js", "Node.js", "Prisma", "MySQL"],
+        "Dibangun dengan Next.js dan TypeScript dalam satu server, MySQL, serta React Query. Keamanan berlapis: hash Argon2, login Google, 2FA TOTP, Cloudflare Turnstile, audit log, dan rate limiting. Integrasi penyedia produk memakai health tracker dan retry dengan backoff agar tetap stabil saat penyedia bermasalah.",
+      stack: ["Next.js", "TypeScript", "MySQL", "Tailwind CSS", "React Query"],
       category: "web",
       thumb: "panel",
     },
     {
-      slug: "ryhar-api",
-      title: "Ryhar API",
+      slug: "snowystore",
+      title: "SnowyStore",
       summary:
-        "Platform Rest API yang menyediakan berbagai endpoint gratis dan mudah digunakan untuk developer, lengkap dengan dokumentasi API yang jelas.",
+        "Toko server panel Pterodactyl, aplikasi premium, dan nomor virtual (OTP) dengan pembayaran QRIS otomatis serta dashboard member dan admin.",
       details:
-        "Kumpulan endpoint gratis dengan dokumentasi interaktif, manajemen akses user, dan pencatatan penggunaan API.",
-      stack: ["Next.js", "Tailwind CSS", "Express.js", "MySQL", "REST API"],
-      category: "api",
-      thumb: "api",
+        "Alur penuh otomatis: pelanggan bayar QRIS, pembayaran terdeteksi lewat webhook, polling, dan worker, pesanan diproses ke penyedia, lalu akun atau server dikirim. Dilengkapi klaim garansi 30 hari, status sistem real-time, notifikasi, cadangan terenkripsi otomatis, circuit breaker, dan tes otomatis.",
+      stack: ["Next.js", "Express.js", "MySQL", "JWT", "Zod"],
+      category: "web",
+      thumb: "panel",
     },
     {
-      slug: "elaina-bot",
-      title: "Elaina Bot (WhatsApp)",
+      slug: "kyoto-api",
+      title: "Kyoto API",
       summary:
-        "Multifunctional WhatsApp bot with games, tools, and automation features designed to enhance user interaction directly within WhatsApp.",
+        "Platform REST API performa tinggi dengan 30+ endpoint di 6 kategori: AI, downloader media, tools, storage, image manipulation, hingga data manga dan anime.",
       details:
-        "Bot WhatsApp dengan sistem command dinamis, game, tools harian, integrasi berbagai API, dan pembuatan gambar menggunakan Canvas.",
-      stack: ["Node.js", "Baileys", "Puppeteer", "Canvas"],
+        "Respons rata-rata di bawah 100 ms dengan struktur endpoint yang dikelompokkan per kategori sehingga tetap rapi saat jumlah fiturnya bertambah. Di-deploy di Vercel.",
+      stack: ["Node.js", "REST API", "Vercel"],
+      category: "api",
+      thumb: "api",
+      image: "/projects/kyoto-api.jpg",
+      live: "https://kyoto-rest-api.vercel.app/",
+      repo: "https://github.com/Ikhwan-stars/kyoto-rest-api",
+    },
+    {
+      slug: "repohub",
+      title: "RepoHub",
+      summary:
+        "Dashboard client-side untuk mengontrol GitHub tanpa terminal: upload folder atau ZIP, jelajahi file repo, kelola issue, dan push langsung dari browser.",
+      details:
+        "Berjalan sepenuhnya di sisi klien dan terhubung ke GitHub API, jadi tidak perlu menginstal Git untuk melakukan operasi dasar pada repository.",
+      stack: ["JavaScript", "GitHub API", "Dashboard"],
+      category: "web",
+      thumb: "panel",
+      image: "/projects/repohub.jpg",
+      live: "https://repo-hub-psi.vercel.app/",
+      repo: "https://github.com/Ikhwan-stars/RepoHub",
+    },
+    {
+      slug: "elyra-bot",
+      title: "ELYRA WhatsApp Bot",
+      summary:
+        "Bot WhatsApp modular berbasis Zapo-JS dengan sistem plugin: AI, downloader, sticker dan maker, musik, manajemen grup, hingga pesan interaktif.",
+      details:
+        "Saya mengkustomisasi dan menstabilkan basis ELYRA (ERINE-AI) dari Lynx Decode dan tim: memperbaiki crash null-safety di sekitar 35 titik, merapikan konflik command, menambah scraper pengganti untuk GitHub dan MediaFire downloader, serta menulis smoke test.",
+      stack: ["Node.js", "Zapo-JS", "SQLite", "Canvas"],
+      category: "bot",
+      thumb: "bot",
+    },
+    {
+      slug: "snowychat",
+      title: "SnowyChat",
+      summary:
+        "Klien web untuk mengontrol bot Minecraft dari browser: multi-akun, chat, inventori, dan automasi, semuanya real-time lewat Socket.IO.",
+      details:
+        "Backend Node.js dan Express dengan Mineflayer untuk koneksi ke server game, Socket.IO untuk komunikasi real-time, penyimpanan lokal sql.js, security headers, rate limit HTTP, dan logger terstruktur.",
+      stack: ["Node.js", "Express.js", "Socket.IO", "Mineflayer"],
       category: "bot",
       thumb: "bot",
     },
