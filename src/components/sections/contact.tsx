@@ -61,7 +61,7 @@ export function Contact() {
       <SectionHeading
         eyebrow="Get in touch"
         title="Contacts"
-        description="Punya proyek atau ide? Kirim pesan, saya biasanya membalas dalam 1–2 hari."
+        description="Punya proyek, ide, atau sekadar ingin ngobrol soal coding? Kirim pesan, saya senang mendengarnya."
       />
 
       <div className="mx-auto grid max-w-5xl items-start gap-8 lg:grid-cols-[1fr_1.35fr] lg:gap-12">
