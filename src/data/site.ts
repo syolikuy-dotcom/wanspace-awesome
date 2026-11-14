@@ -66,7 +66,7 @@ export const site = {
     "Portofolio Ikhwan Romadon — pelajar SMAN 7 Kabupaten Tangerang dan Fullstack Web Developer yang membangun aplikasi web, REST API, dan bot dengan Next.js, Node.js, dan MySQL.",
   roles: ["Fullstack Web Developer", "Next.js & Node.js Builder", "WhatsApp Bot Developer"],
   intro:
-    "Halo! Saya suka ngoding dan bereksperimen dengan ide-ide baru. Bagi saya, setiap baris kode adalah cara untuk menghadirkan sesuatu yang bermanfaat dan keren di dunia digital.",
+    "Halo! Saya suka ngoding dan bereksperimen dengan ide-ide baru. Bagi saya, setiap baris kode adalah cara untuk menghadirkan sesuatu yang bermanfaat dan inovatif di dunia digital.",
   avatar: "/avatar.jpg",
   /** Upload CV kamu ke /public/cv.pdf (nama file harus sama) dan tombol Download CV langsung berfungsi. */
   cv: "/cv.pdf",
