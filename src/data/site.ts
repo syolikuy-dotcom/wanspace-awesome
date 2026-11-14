@@ -104,9 +104,9 @@ export const site = {
     },
   ] satisfies Service[],
   about: {
-    who: "Saya seorang web developer yang berfokus pada menciptakan tampilan dan pengalaman pengguna yang sederhana, cepat, dan fungsional.",
+    who: "Saya web developer yang percaya bahwa hal sederhana sering kali paling efektif. Fokus saya adalah membangun antarmuka yang bersih, cepat diakses, dan benar-benar berfungsi sesuai kebutuhan pengguna.",
     approach:
-      "Saya mengutamakan clean code, desain responsif, dan pengalaman pengguna yang intuitif di setiap proyek yang saya kerjakan.",
+      "Di setiap proyek, saya menempatkan clean code, desain responsif, dan UX yang intuitif sebagai prioritas — bukan sekadar pelengkap, tapi fondasi dari setiap keputusan teknis yang saya ambil.",
     details: [
       { label: "Name", value: "Ikhwan Romadon" },
       { label: "Place of Birth", value: "Tangerang, 21 Agustus 2009" },
