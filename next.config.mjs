@@ -5,6 +5,11 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion"],
   },
+  async rewrites() {
+    return [
+      { source: "/.well-known/discord", destination: "/api/discord-verify" },
+    ];
+  },
   async headers() {
     return [
       {
@@ -14,10 +19,6 @@ const nextConfig = {
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
         ],
-      },
-      {
-        source: "/.well-known/discord",
-        headers: [{ key: "Content-Type", value: "text/plain; charset=utf-8" }],
       },
     ];
   },
